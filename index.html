@@ -1,172 +1,53 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ارتباط با کافی‌نت ونوس</title>
-    <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet" type="text/css" />
-    <style>
-        body {
-            font-family: 'Vazir', sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
-        .container {
-            background: #ffffff;
-            padding: 30px 20px;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-        p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 12px;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            transition: opacity 0.2s, transform 0.2s;
-            box-sizing: border-box;
-            cursor: pointer;
-            border: none;
-        }
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        .btn img {
-            width: 24px;
-            height: 24px;
-            margin-left: 10px;
-            filter: brightness(0) invert(1);
-        }
-        
-        .whatsapp { background-color: #25D366; }
-        .telegram { background-color: #0088cc; }
-        .eitaa { background-color: #ff8e00; }
-        .bale { background-color: #00a8e8; }
-        .shad { background-color: #6c4b9e; }
-
-        /* استایل پنجره تأیید */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-box {
-            background: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 350px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        .modal-box h3 {
-            margin-top: 0;
-            color: #333;
-            font-size: 18px;
-        }
-        .modal-box p {
-            color: #555;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .modal-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-        .modal-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Vazir', sans-serif;
-            font-size: 16px;
-            cursor: pointer;
-            flex: 1;
-        }
-        .modal-btn.yes {
-            background-color: #25D366;
-            color: white;
-        }
-        .modal-btn.no {
-            background-color: #e0e0e0;
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <h1>کافی‌نت ونوس</h1>
-        <p>برای ارسال فایل، روی پیام‌رسان مورد نظر کلیک کنید:</p>
-
-        <!-- دکمه‌ها: آدرس اپلیکیشن (scheme) و آدرس وب به عنوان پشتیبان -->
-        <button class="btn whatsapp" onclick="showModal('whatsapp://send?phone=989180056290', 'https://wa.me/989180056290')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            واتساپ
-        </button>
-
-        <button class="btn telegram" onclick="showModal('tg://resolve?domain=venus3428', 'https://t.me/venus3428')">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
-            تلگرام
-        </button>
-
-        <button class="btn eitaa" onclick="showModal('eitaa://eitaa.com/venus3428', 'https://web.eitaa.com/#@venus3428')">
+<button class="btn eitaa"
+            onclick="showModal(
+                'eitaa://eitaa.com/venus3428',
+                'https://eitaa.com/venus3428'
+            )">
             ایتا
         </button>
 
-        <button class="btn bale" onclick="showModal('bale://u/1791760676', 'https://web.bale.ai/chat?uid=1791760676')">
+        <button class="btn bale"
+            onclick="showModal(
+                'bale://u/1791760676',
+                'https://web.bale.ai/chat?uid=1791760676'
+            )">
             بله
         </button>
 
-        <button class="btn shad" onclick="showModal('https://web.shad.ir/#c=u0JfKA06fcc2e1b60bd204ed06100c97')">
+        <button class="btn shad"
+            onclick="showModal(
+                '',
+                'https://web.shad.ir/#c=u0JfKA06fcc2e1b60bd204ed06100c97'
+            )">
             شاد
         </button>
-    </div>
+    </main>
 
     <!-- پنجره تأیید -->
     <div class="modal-overlay" id="myModal">
         <div class="modal-box">
-            <h3>باز کردن اپلیکیشن</h3>
-            <p>آیا می‌خواهید اپلیکیشن مربوطه در گوشی شما باز شود؟</p>
-            <div class="modal-buttons">
-                <button class="modal-btn yes" id="confirmBtn">بله، باز کن</button>
-                <button class="modal-btn no" onclick="closeModal()">انصراف</button>
-            </div>
+            <h3 id="modalTitle">باز کردن پیام‌رسان</h3>
+
+            <p id="modalMessage">
+                چگونه می‌خواهید وارد گفت‌وگو شوید؟
+            </p>
+
+            <button class="modal-btn yes"
+                    id="confirmBtn"
+                    onclick="openApp()">
+                باز کردن اپلیکیشن
+            </button>
+
+            <button class="modal-btn web"
+                    id="webBtn"
+                    onclick="openWeb()">
+                باز کردن نسخه وب
+            </button>
+
+            <button class="modal-btn no"
+                    onclick="closeModal()">
+                انصراف
+            </button>
         </div>
     </div>
 
@@ -174,35 +55,61 @@
         let appUrl = "";
         let fallbackUrl = "";
 
-        // نمایش پنجره
         function showModal(app, fallback) {
-            appUrl = app;
+            appUrl = app || "";
             fallbackUrl = fallback || "";
-            document.getElementById('myModal').style.display = 'flex';
-        }
 
-        // بستن پنجره
-        function closeModal() {
-            document.getElementById('myModal').style.display = 'none';
-        }
+            const confirmBtn = document.getElementById("confirmBtn");
+            const webBtn = document.getElementById("webBtn");
+            const message = document.getElementById("modalMessage");
 
-        // وقتی روی "بله" کلیک شد
-        document.getElementById('confirmBtn').addEventListener('click', function() {
-            closeModal();
-            
-            // روش استاندارد و قوی برای باز کردن اپلیکیشن:
-            // 1. ابتدا سعی می‌کنیم اپلیکیشن را باز کنیم (با تغییر مسیر مرورگر)
-            window.location.href = appUrl;
+            confirmBtn.style.display = appUrl ? "block" : "none";
+            webBtn.style.display = fallbackUrl ? "block" : "none";
 
-            // 2. اگر اپلیکیشن نصب نباشد، مرورگر پس از حدود 1.5 ثانیه به لینک وب می‌رود
-            if (fallbackUrl) {
-                setTimeout(function() {
-                    // برای جلوگیری از اجرای این کد در صورتی که صفحه رفته باشد
-                    // از یک ترفند ساده استفاده می‌کنیم
-                    window.location.href = fallbackUrl;
-                }, 1500);
+            if (!appUrl) {
+                message.textContent =
+                    "برای این پیام‌رسان فقط لینک وب تنظیم شده است.";
+            } else {
+                message.textContent =
+                    "اپلیکیشن را باز کنید یا نسخه وب را انتخاب کنید.";
             }
-        });
+
+            document.getElementById("myModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        function openApp() {
+            if (!appUrl) return;
+
+            const url = appUrl;
+            closeModal();
+
+            // فقط تلاش برای باز کردن اپلیکیشن؛
+            // هدایت خودکار و زمان‌بندی‌شده به وب انجام نمی‌شود.
+            window.location.href = url;
+        }
+
+        function openWeb() {
+            if (!fallbackUrl) return;
+
+            const url = fallbackUrl;
+            closeModal();
+
+            window.location.href = url;
+        }
+
+        // بستن پنجره با کلیک روی فضای بیرونی
+        document.getElementById("myModal").addEventListener(
+            "click",
+            function(event) {
+                if (event.target === this) {
+                    closeModal();
+                }
+            }
+        );
     </script>
 
 </body>
